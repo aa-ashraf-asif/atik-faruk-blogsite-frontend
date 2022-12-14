@@ -7,7 +7,7 @@ import { getBanner, getBlogs } from "lib/api";
 
 const Home = ({ blogs, banner }) => {
   return (
-    <Layout banner={banner}>
+    <Layout banner={banner} image={banner && banner.cover.url}>
       <Container className="blogs-section">
         <Row>
           <Col lg="8" className="pe-lg-5 my-5 d-flex flex-column gap-5">
@@ -20,7 +20,7 @@ const Home = ({ blogs, banner }) => {
           <Col lg="4" className="my-5">
             {/* blog sidebar */}
             <div className="blogs-section__sidebar">
-              {/* blog search for pc */}p
+              {/* blog search for pc */}
               <SearchBlog blogs={blogs} display="d-none d-lg-block" />
 
               <hr className="my-4" />

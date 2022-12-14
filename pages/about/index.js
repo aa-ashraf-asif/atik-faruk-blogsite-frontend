@@ -2,6 +2,7 @@ import Layout from "@/components/Layout/Layout";
 import { Container } from "react-bootstrap";
 import { FRONTEND_URL } from "config";
 import { getAbout } from "lib/api";
+import { htmlToText } from "html-to-text";
 
 const About = ({ about }) => {
   return (
