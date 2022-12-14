@@ -1,0 +1,8 @@
+@media (min-width: 992px) {
+  .blogs-section {
+    &__sidebar {
+      position: sticky;
+      top: 80px;
+    }
+  }
+}

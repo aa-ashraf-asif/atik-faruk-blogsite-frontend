@@ -1,0 +1,12 @@
+.about {
+  &__content {
+    text-align: justify;
+
+    blockquote {
+      padding-left: 1rem;
+      border-left: 8px solid gray;
+      font-style: italic;
+      margin: 2rem 0;
+    }
+  }
+}

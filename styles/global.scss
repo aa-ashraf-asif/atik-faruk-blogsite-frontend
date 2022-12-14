@@ -1,0 +1,44 @@
+// primary font: Noto Serif Bengali
+@import url("https://fonts.googleapis.com/css2?family=Noto+Serif+Bengali:wght@400;500;600;700;800&display=swap");
+// bootstrap
+@import "~bootstrap/scss/bootstrap";
+
+// apply on all styles
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Noto Serif Bengali", serif !important;
+}
+
+// page styles
+@import "@/styles/index.scss";
+@import "@/styles/blogPreview.scss";
+@import "@/styles/bookPreview.scss";
+@import "@/styles/about.scss";
+
+// component styles
+@import "@/components/Header/Header.scss";
+@import "@/components/Loader/Loader.scss";
+@import "@/components/Blog/Blog.scss";
+@import "@/components/SearchBlog/SearchBlog.scss";
+@import "@/components/Book/Book.scss";
+
+// scrollbar
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: white;
+}
+
+::-webkit-scrollbar-thumb {
+  background: black;
+  transition: all 0.3s ease-out;
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: gray;
+}

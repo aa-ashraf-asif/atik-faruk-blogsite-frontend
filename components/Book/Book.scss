@@ -1,0 +1,13 @@
+.book {
+  &__header {
+    position: relative;
+    aspect-ratio: 1/1.5;
+  }
+
+  &__cover {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    cursor: pointer;
+  }
+}
