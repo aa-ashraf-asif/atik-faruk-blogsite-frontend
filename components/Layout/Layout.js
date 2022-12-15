@@ -14,6 +14,8 @@ const Layout = ({
   type,
   url,
   image,
+  imgHeight,
+  imgWidth,
   banner,
 }) => {
   const [pageLoading, setPageLoading] = useState(false);
@@ -42,8 +44,8 @@ const Layout = ({
         <meta property="og:description" content={description} />
         <meta property="og:url" content={url} />
         <meta property="og:image" content={image} />
-        <meta property="og:image:width" content="800" />
-        <meta property="og:image:height" content="400" />
+        <meta property="og:image:width" content={imgWidth} />
+        <meta property="og:image:height" content={imgHeight} />
         <meta property="og:image:alt" content={title} />
       </Head>
 
@@ -71,4 +73,6 @@ Layout.defaultProps = {
   url: `${FRONTEND_URL}`,
   image:
     "https://res.cloudinary.com/dnljodavm/image/upload/v1669628157/atik_faruk_website_banner_ab2e9f166f.jpg",
+  imgHeight: "400",
+  imgWidth: "800",
 };

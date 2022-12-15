@@ -17,6 +17,8 @@ const BookPreview = ({ book }) => {
       type="book"
       url={`${FRONTEND_URL}/books/${book.id}`}
       image={book.cover && book.cover}
+      imgHeight="600"
+      imgWidth="400"
     >
       <Container className="book-preview my-5">
         <Row className="justify-content-center align-items-center">
