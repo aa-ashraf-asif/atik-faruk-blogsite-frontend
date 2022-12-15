@@ -1,6 +1,6 @@
 // ...
 const siteUrl =
-  process.env.NEXTJS_PUBLIC_FRONTEND_URL || "https://atikfaruk.com";
+  process.env.NEXTJS_PUBLIC_FRONTEND_URL || "https://www.atikfaruk.com";
 
 module.exports = {
   siteUrl,
