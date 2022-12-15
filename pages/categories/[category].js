@@ -18,6 +18,24 @@ const FilteredBlogs = ({ blogs, blogsByCategory, category }) => {
       type="website"
       url={`${FRONTEND_URL}/categories/${category}`}
     >
+      {/* hidden content  */}
+      <div
+        style={{
+          position: "absolute",
+          userSelect: "none",
+          pointerEvents: "none",
+          opacity: 0,
+        }}
+      >
+        <h1>
+          আতিক ফারুকের {CategoryModifier(category)} | Atik Faruk's {category}
+        </h1>
+        <p>
+          আমার লেখালেখির পৃথিবীতে আপনাকে স্বাগত। সামান্য লেখক হিসেবে আপনাদের
+          জন্য আমাদের এসমস্ত আয়োজন।
+        </p>
+      </div>
+
       <Container className="blogs-section">
         <Row>
           <Col lg="8" className="pe-lg-5 my-5 d-flex flex-column gap-5">
@@ -29,9 +47,9 @@ const FilteredBlogs = ({ blogs, blogsByCategory, category }) => {
                 </Link>
               </Col>
               <Col xs="6" className="px-0">
-                <h1 className="fs-3 fw-bold text-center mb-0">
+                <h2 className="fs-3 fw-bold text-center mb-0">
                   বিষয়: {CategoryModifier(category)}
-                </h1>
+                </h2>
               </Col>
             </Row>
 

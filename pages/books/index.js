@@ -13,6 +13,23 @@ const Books = ({ books }) => {
       url={`${FRONTEND_URL}/books`}
       image="https://res.cloudinary.com/dnljodavm/image/upload/v1669556247/314652647_1122320148487349_8880385912391610929_n_sv7ybj.jpg"
     >
+      {/* hidden content  */}
+      <div
+        style={{
+          position: "absolute",
+          userSelect: "none",
+          pointerEvents: "none",
+          opacity: 0,
+        }}
+      >
+        <h1>আতিক ফারুকের বইসমূহ | Atik Faruk's books</h1>
+        <p>
+          উনিশ সালের অক্টোবর থেকে একে একে প্রকাশিত হতে থাকে আমার বইগুলো। আমার
+          সৃষ্টি, আমার চিন্তার প্রস্ফুরণ। বেয়ারিং নামে একটা ছোটোকাগজ সম্পাদনা
+          করছি, যা পাঠকমহলে ব্যাপক বিস্তৃত।
+        </p>
+      </div>
+
       <Container className="my-5">
         {/* books heading */}
         <h1 className="fs-3 fw-bold mb-5">আমার বই</h1>

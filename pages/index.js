@@ -8,6 +8,22 @@ import { getBanner, getBlogs } from "lib/api";
 const Home = ({ blogs, banner }) => {
   return (
     <Layout banner={banner} image={banner && banner.cover.url}>
+      {/* hidden content  */}
+      <div
+        style={{
+          position: "absolute",
+          userSelect: "none",
+          pointerEvents: "none",
+          opacity: 0,
+        }}
+      >
+        <h1>আতিক ফারুক - লেখালেখি | Atik Faruk Blog</h1>
+        <p>
+          আমার লেখালেখির পৃথিবীতে আপনাকে স্বাগত। সামান্য লেখক হিসেবে আপনাদের
+          জন্য আমাদের এসমস্ত আয়োজন।
+        </p>
+      </div>
+
       <Container className="blogs-section">
         <Row>
           <Col lg="8" className="pe-lg-5 my-5 d-flex flex-column gap-5">
