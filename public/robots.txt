@@ -7,8 +7,8 @@ User-agent: *
 Allow: /
 
 # Host
-Host: https://atikfaruk.com
+Host: https://www.atikfaruk.com
 
 # Sitemaps
-Sitemap: https://atikfaruk.com/sitemap.xml
-Sitemap: https://atikfaruk.com/server-sitemap.xml
+Sitemap: https://www.atikfaruk.com/sitemap.xml
+Sitemap: https://www.atikfaruk.com/server-sitemap.xml

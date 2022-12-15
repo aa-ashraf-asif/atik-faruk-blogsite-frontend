@@ -28,7 +28,8 @@ const FilteredBlogs = ({ blogs, blogsByCategory, category }) => {
         }}
       >
         <h1>
-          আতিক ফারুকের {CategoryModifier(category)} | Atik Faruk's {category}
+          আতিক ফারুকের {CategoryModifier(category)} | Atik Faruk&apos;s{" "}
+          {category}
         </h1>
         <p>
           আমার লেখালেখির পৃথিবীতে আপনাকে স্বাগত। সামান্য লেখক হিসেবে আপনাদের
