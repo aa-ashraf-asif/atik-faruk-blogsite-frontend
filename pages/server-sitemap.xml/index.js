@@ -1,5 +1,6 @@
 import { FRONTEND_URL } from "config";
 import { getBlogs, getBooks } from "lib/api";
+import { Categories } from "lib/category";
 import { getServerSideSitemap } from "next-sitemap";
 
 export async function getServerSideProps(ctx) {
@@ -9,18 +10,23 @@ export async function getServerSideProps(ctx) {
   const blogSiteMaps =
     blogs &&
     blogs.map((blog) => ({
-      loc: `${FRONTEND_URL}/${blog.id}`,
+      loc: `${FRONTEND_URL}/blogs/${blog.id}`,
       lastmod: blog.createdAt.toISOString(),
     }));
 
   const bookSiteMaps =
     books &&
     books.map((book) => ({
-      loc: `${FRONTEND_URL}/${book.id}`,
+      loc: `${FRONTEND_URL}/books/${book.id}`,
       lastmod: book.date.toISOString(),
     }));
 
-  const fields = [...blogSiteMaps, ...bookSiteMaps];
+  const categorySiteMaps = Categories.map((category) => ({
+    loc: `${FRONTEND_URL}/categories/${category}`,
+    lastmod: new Date.toISOString(),
+  }));
+
+  const fields = [...blogSiteMaps, ...bookSiteMaps, ...categorySiteMaps];
 
   return getServerSideSitemap(ctx, fields);
 }
