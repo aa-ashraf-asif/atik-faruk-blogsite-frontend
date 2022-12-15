@@ -58,5 +58,6 @@ export async function getStaticProps() {
 
   return {
     props: { blogs, banner },
+    revalidate: 1,
   };
 }
