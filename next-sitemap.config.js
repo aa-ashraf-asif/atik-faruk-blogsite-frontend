@@ -1,6 +1,24 @@
 // ...
+const siteUrl =
+  process.env.NEXTJS_PUBLIC_FRONTEND_URL || "https://atikfaruk.com";
+
 module.exports = {
-  siteUrl: process.env.NEXTJS_PUBLIC_FRONTEND_URL || "http://localhost:3000",
+  siteUrl,
+  exclude: ["/404"],
   generateRobotsTxt: true,
+  exclude: ["/server-sitemap.xml"],
+  robotsTxtOptions: {
+    policies: [
+      {
+        userAgent: "*",
+        disallow: ["/404"],
+      },
+      { userAgent: "*", allow: "/" },
+    ],
+    additionalSitemaps: [
+      `${siteUrl}/sitemap.xml`,
+      `${siteUrl}/server-sitemap.xml`,
+    ],
+  },
 };
 // ...
