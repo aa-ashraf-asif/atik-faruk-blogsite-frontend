@@ -91,7 +91,7 @@ const FilteredBlogs = ({ blogs, blogsByCategory, category }) => {
             {/* blog sidebar */}
             <div className="blogs-section__sidebar">
               {/* blog search for pc */}
-              <SearchBlog blogs={blogs} display="d-none d-lg-block" />
+              <SearchBlog device="large" />
 
               <hr className="my-4" />
               {/* blog categories for pc */}

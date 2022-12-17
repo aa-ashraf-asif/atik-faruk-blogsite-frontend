@@ -26,18 +26,18 @@ const Home = ({ blogs, banner }) => {
 
       <Container className="blogs-section">
         <Row>
-          <Col lg="8" className="pe-lg-5 my-5 d-flex flex-column gap-5">
+          <Col lg="8" className="pe-lg-5 my-3 my-lg-5  d-flex flex-column gap-3">
             {/* blog categories for mobile */}
             <Categories blogs={blogs} defaultCollapse="" display="d-lg-none" />
             {/* blogs */}
             <Blogs blogs={blogs} />
           </Col>
 
-          <Col lg="4" className="my-5">
+          <Col lg="4" className="my-lg-5 mb-5">
             {/* blog sidebar */}
             <div className="blogs-section__sidebar">
               {/* blog search for pc */}
-              <SearchBlog blogs={blogs} display="d-none d-lg-block" />
+              <SearchBlog display="large" />
 
               <hr className="my-4" />
               {/* blog categories for pc */}

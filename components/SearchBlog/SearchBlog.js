@@ -5,11 +5,20 @@ import { Button, Col, Form, Modal, Row } from "react-bootstrap";
 import { BiSearch } from "react-icons/bi";
 import moment from "moment";
 import "moment/locale/bn-bd";
+import { useEffect } from "react";
+import { getBlogs } from "lib/api";
+import { CategoryModifier } from "lib/category";
 moment.locale("bn-bd");
 
-const SearchBlog = ({ blogs, display }) => {
+const SearchBlog = ({ device }) => {
   // modal hide and show actions
   const [show, setShow] = useState(false);
+
+  const [blogs, setBlogs] = useState([]);
+
+  useEffect(() => {
+    getBlogs().then((response) => setBlogs(response));
+  }, []);
 
   const [searchedBlogs, setSearchedBlogs] = useState([]);
 
@@ -29,16 +38,29 @@ const SearchBlog = ({ blogs, display }) => {
   return (
     <>
       {/* open search button */}
-      <a
-        className={`btn bg-dark bg-opacity-10 text-start ${display}`}
-        onClick={() => {
-          setShow(true);
-          setSearchedBlogs([]);
-        }}
-      >
-        <BiSearch className="me-2 fs-3" />{" "}
-        <span className="text-muted">অনুসন্ধান করুন</span>
-      </a>
+      {device === "small" ? (
+        <a
+          className="text-black fs-3 d-lg-none"
+          style={{ cursor: "pointer" }}
+          onClick={() => {
+            setShow(true);
+            setSearchedBlogs([]);
+          }}
+        >
+          <BiSearch />
+        </a>
+      ) : (
+        <a
+          className="btn bg-dark bg-opacity-10 text-start d-none d-lg-block"
+          onClick={() => {
+            setShow(true);
+            setSearchedBlogs([]);
+          }}
+        >
+          <BiSearch className="me-2 fs-3" />{" "}
+          <span className="text-muted">অনুসন্ধান করুন</span>
+        </a>
+      )}
 
       {/* search content */}
       <Modal show={show} onHide={() => setShow(false)} className="search-modal">
@@ -71,7 +93,7 @@ const SearchBlog = ({ blogs, display }) => {
               <div key={blog.id}>
                 <Link
                   href={`/blogs/${blog.id}`}
-                  style={{ textDecoration: "none" }}
+                  className="text-decoration-none"
                 >
                   <Row className="px-0 py-3 border-bottom">
                     <Col xs="2">
@@ -108,7 +130,8 @@ const SearchBlog = ({ blogs, display }) => {
                       </h6>
                       {/* search modal info */}
                       <small className="search-modal__info text-muted">
-                        {blog.category} | {moment(blog.createdAt).format("LL")}
+                        {CategoryModifier(blog.category)} |{" "}
+                        {moment(blog.createdAt).format("LL")}
                       </small>
                     </Col>
                   </Row>

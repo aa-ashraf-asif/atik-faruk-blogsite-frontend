@@ -4,8 +4,8 @@ import { useState } from "react";
 import { Navbar, Container, Nav } from "react-bootstrap";
 import { GrMenu, GrClose } from "react-icons/gr";
 import { BiHomeAlt, BiBookAlt, BiEnvelopeOpen } from "react-icons/bi";
-import { FaFacebook } from "react-icons/fa";
 import Image from "next/image";
+import SearchBlog from "../SearchBlog/SearchBlog";
 
 const Header = ({ banner }) => {
   const router = useRouter();
@@ -38,15 +38,8 @@ const Header = ({ banner }) => {
         className="navbar border-top border-bottom shadow-sm"
       >
         <Container>
-          {/* social */}
-          <a
-            href="https://www.facebook.com/atikfarukoffice"
-            className="social-btn fs-3 d-lg-none"
-            target="_blank"
-            rel="noreferrer"
-          >
-            <FaFacebook style={{ color: "#3b5998" }} />
-          </a>
+          {/* search */}
+          <SearchBlog device="small" />
 
           {/* logo */}
           <Link
